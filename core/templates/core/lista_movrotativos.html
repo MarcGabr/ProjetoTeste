@@ -1,0 +1,13 @@
+<h2>Lista de Movimentos Rotativo <h2>
+
+<ul>
+{% for mov in mov_rot %}
+       <li>{{mov.checkin}} - {{mov.veiculo.placa}}</li>
+{% endfor %}
+</ul>
+
+<form action="{% url 'core_movrotativo_novo' %}" method="POST">
+       {% csrf_token%}
+       {{ form.as_p }}
+       <button type="submit">Cadastrar</button>
+</form>
